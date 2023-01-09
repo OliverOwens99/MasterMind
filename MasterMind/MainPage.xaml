@@ -1,0 +1,98 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MasterMind.MainPage">
+    <ScrollView>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Grid x:Name="GridColourPicker" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="false">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <BoxView Color="Red" Grid.Row="0" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="15" WidthRequest="15">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <BoxView Color="Green" Grid.Row="1" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="15" WidthRequest="15">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <BoxView Color="Yellow" Grid.Row="2" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="15" WidthRequest="15">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <BoxView Color="Blue" Grid.Row="3" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="15" WidthRequest="15">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </Grid>
+            <Grid x:Name="GridTest" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="900" WidthRequest="500" BackgroundColor ="AliceBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="board.png" Opacity="1" Grid.RowSpan="3" Grid.ColumnSpan="4"/>
+ 
+
+                <Button x:Name="BtnGuess1" CornerRadius="5" BorderWidth="5" BorderColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="0"  HeightRequest="30" WidthRequest="40" Clicked="Button_Clicked"/>
+                <Button x:Name="BtnGuess2" CornerRadius="5" BorderWidth="5" BorderColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="1" HeightRequest="30" WidthRequest="40" Clicked="Button_Clicked"/>
+                <Button x:Name="BtnGuess3" CornerRadius="5" BorderWidth="5" BorderColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="2" HeightRequest="30" WidthRequest="40" Clicked="Button_Clicked"/>
+                <Button x:Name="BtnGuess4" CornerRadius="5" BorderWidth="5" BorderColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="3"  HeightRequest="30" WidthRequest="40" Clicked="Button_Clicked"/>
+                <Button x:Name="Check" BorderWidth="20" CornerRadius="10" BorderColor="Transparent" Text="Check" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="20" Grid.Column="0"  Clicked="Check_Clicked" HeightRequest="100" WidthRequest="125" />
+                <Button x:Name="Reset" BorderWidth="20" CornerRadius="10" BorderColor="Transparent" Text="Reset" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="20" Grid.Column="3"  Clicked="Reset_Clicked" HeightRequest="100" WidthRequest="125" />
+                <BoxView x:Name="Code1" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="Black" Grid.Row="18" Grid.Column="0" HeightRequest="15" WidthRequest="15" IsVisible="false"></BoxView>
+                <BoxView x:Name="Code2" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="Black" Grid.Row="18" Grid.Column="1" HeightRequest="15" WidthRequest="15" IsVisible="false"></BoxView>
+                <BoxView x:Name="Code3" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="Black" Grid.Row="18" Grid.Column="2" HeightRequest="15" WidthRequest="15" IsVisible="false">
+                        </BoxView>
+                <BoxView x:Name="Code4" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="Black" Grid.Row="18" Grid.Column="3" HeightRequest="15" WidthRequest="15" IsVisible="false"></BoxView>
+
+                <Grid x:Name="CheckerGrid"  BackgroundColor ="Brown" Grid.Column="4" WidthRequest="100">
+                    <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView x:Name="Peg1" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="White" Grid.Row="0" Grid.Column="0" HeightRequest="10" WidthRequest="10" IsVisible="true"></BoxView>
+                    <BoxView x:Name="Peg2" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="White" Grid.Row="0" Grid.Column="1" HeightRequest="10" WidthRequest="10" IsVisible="true"></BoxView>
+                    <BoxView x:Name="Peg3" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="White" Grid.Row="1" Grid.Column="0" HeightRequest="10" WidthRequest="10" IsVisible="true"></BoxView>
+                    <BoxView x:Name="Peg4" CornerRadius="5"   HorizontalOptions="Center" VerticalOptions="Center" Color="White" Grid.Row="1" Grid.Column="1" HeightRequest="10" WidthRequest="10" IsVisible="true"></BoxView>
+                </Grid>
+
+            </Grid>
+
+ 
+        </HorizontalStackLayout>
+
+    </ScrollView>
+</ContentPage>
